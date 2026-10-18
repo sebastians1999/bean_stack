@@ -1,35 +1,21 @@
-# Explorer Prompt Template
+# Helper prompt
 
-Build each explorer subagent's prompt from this template. Fill in the placeholders.
+Build the one helper subagent's prompt from this template. Fill in the placeholders. Paste the output sections from `explainer-prompt.md` into the prompt so the helper does not need this repo open.
 
 ---
 
-Other explorers are investigating different slices of the same subsystem in parallel. Don't try to cover everything. Focus on your assigned angle and go deep.
+You are the only explorer for this question. Cover the question, or the slice below if the parent names one. Read the code. Write the explanation yourself. Do not assume another explorer will cover the rest.
 
 ## Question
 
 > {QUESTION}
 
-## Your Exploration Angle
+## Slice
 
 {EXPLORATION_ANGLE}
 
+The parent already read what fit in its own context. This slice is the part that did not fit. When the slice says "the whole question", cover the whole question.
+
 ## Output
 
-### Components Found
-The key types, services, classes, and abstractions. For each: name, file path, and a one-sentence description of what it does.
-
-### Flow
-The execution flow step by step. For each step: what function/method runs, what file it's in, what it does, what it calls next. Include the data that flows between steps.
-
-### Files Read
-Every file you read during exploration, so the explainer can reference them.
-
-### Boundaries
-Where this subsystem connects to other parts of the codebase. The inputs and outputs.
-
-### Non-Obvious Things
-Anything surprising, historically motivated, or easy to get wrong. Things that look like they should work one way but work another.
-
-### Open Questions
-Anything you couldn't fully trace or understand. Be honest about gaps.
+Return the sections from the explanation spec the parent included. Those are Overview, Key concepts, How it works, Where things live, and Gotchas. Drop a section that does not apply. Name files and functions a reader can open. End with open questions you could not close.
