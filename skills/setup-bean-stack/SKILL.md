@@ -40,6 +40,7 @@ comment pass: composer-2.5
 how and why: composer-2.5
 architect helper: grok-4.7-xhigh
 automate-me mining: grok-4.7-xhigh
+trail reviewer: composer-2.5
 ```
 
 ### 6. Confirm

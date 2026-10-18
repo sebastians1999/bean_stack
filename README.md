@@ -12,7 +12,7 @@ Copy this repo to `~/.cursor/plugins/local/bean_stack`. Restart Cursor, or run D
 
 Start a task with `/sebastian-mode`.
 
-Run `/setup-bean-stack` once to choose a model per subagent role. It writes `~/.cursor/rules/bean-stack-models.mdc`. Without that file, the defaults in the Models table of `skills/sebastian-mode/SKILL.md` apply. The implementer, the architect helper, and the automate-me miner run on `grok-4.7-xhigh`. The comment pass and the how and why subagents run on `composer-2.5`. The main chat model is whatever you pick in Cursor.
+Run `/setup-bean-stack` once to choose a model per subagent role. It writes `~/.cursor/rules/bean-stack-models.mdc`. Without that file, the defaults in the Models table of `skills/sebastian-mode/SKILL.md` apply. The implementer, the architect helper, and the automate-me miner run on `grok-4.7-xhigh`. The comment pass, the how and why subagents, and the trail reviewer run on `composer-2.5`. The main chat model is whatever you pick in Cursor.
 
 ## Install for other agents
 

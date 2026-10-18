@@ -75,6 +75,7 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 | `how and why` | **how** helper, **why** investigators and synthesizer | `composer-2.5` |
 | `architect helper` | **architect** sketch helper | `grok-4.7-xhigh` |
 | `automate-me mining` | **automate-me** mining subagent | `grok-4.7-xhigh` |
+| `trail reviewer` | **show-me-your-work** cross-model review | `composer-2.5` |
 
 **Defaults for every `Task` call.** `run_in_background: true` when the tool supports it. Agent mode for the implementer and the **why** spawns (readonly strips MCP and the tools the delegate needs). Readonly for a `how` helper. File pointers, not inlined context.
 
