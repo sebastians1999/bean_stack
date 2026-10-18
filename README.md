@@ -12,6 +12,8 @@ Copy this repo to `~/.cursor/plugins/local/bean_stack`. Restart Cursor, or run D
 
 Start a task with `/sebastian-mode`.
 
+The implementer (`agents/sebastian-agent.md`) and the comment pass (`agents/comment-sicko.md`) run on `composer-2.5`, set in each file's `model` field. Edit that line to change the model. Cursor falls back to a compatible model when the plan or a team admin blocks it. Other harnesses ignore the field.
+
 ## Install for other agents
 
 Other harnesses read the root `plugin.json` and the `skills/` tree. Point the agent at this checkout and have it read `skills/sebastian-mode/SKILL.md` before implementation work. When the harness can spawn subagents, the code-writing delegate is `sebastian-agent`. When it cannot, the parent agent writes the code and still follows the playbook.

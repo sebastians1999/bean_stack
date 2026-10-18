@@ -1,6 +1,7 @@
 ---
 name: sebastian-agent
 description: Delegate subagent for code-writing spawned during a `/sebastian-mode` run. Use for the one implementer, not as the runner for `/sebastian-mode` itself. Spawn a fresh `sebastian-agent` for each new task, and resume one only in the strict cases that sebastian-mode's Subagents section names. Reads the `sebastian-mode` skill's `SKILL.md` in full before any work, including its inline Principles index. Substituting `generalPurpose` skips that read and drifts.
+model: composer-2.5
 is_background: true
 ---
 

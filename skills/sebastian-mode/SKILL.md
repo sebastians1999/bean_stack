@@ -65,7 +65,7 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 **Helpers.** `how` and `architect` run inline. Spawn one helper when the read or the sketch does not fit in this agent. Spawn another only when you can name the gap the first helper left. A named gap is a file, a caller, or a decision you still cannot see.
 
-**Defaults for every `Task` call.** `run_in_background: true` when the tool supports it. Agent mode for the implementer (readonly strips tools the delegate needs). Readonly for a `how` helper. File pointers, not inlined context. Leave `model` unset so the subagent inherits the parent. If the user named a model for this run, use that. Do not invent a model slug.
+**Defaults for every `Task` call.** `run_in_background: true` when the tool supports it. Agent mode for the implementer (readonly strips tools the delegate needs). Readonly for a `how` helper. File pointers, not inlined context. Leave `model` unset. `sebastian-agent` and `comment-sicko` set a cheap model in their agent files, and a `how` helper inherits the parent. If the user named a model for this run, pass that. Do not invent a model slug.
 
 You own the delegate's work. Review the diff and write your own summary. Do not pass through what it said.
 
