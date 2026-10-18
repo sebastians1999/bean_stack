@@ -19,6 +19,7 @@ Remaining triggers:
 - Nontrivial change, architecture decision, or "are we sure?" Run the **how** skill. Do that read inline. One helper only when the subsystem does not fit here.
 - "Why was X built this way", a design rationale, a regression, or a threshold you are about to change. Run the **why** skill.
 - About to `AskQuestion` on a "which approach", "how should I", or "what should this do" fork. Classify it before you ask. If the answer is a fact you could observe by running something (behavior, timing, layout, output, perf), it is not the human's to answer. Run the cheapest check that would settle it. A read-only question stays on the **how** skill. Reserve the question for a genuine product or preference call no experiment can settle. Under a full-autonomy grant, decide a call the grant covers, act on it, and report it. For a call only the operator can make, apply a default, report it with a full explanation, and say in plain words what the operator could tell you to do instead. The operator answers in their own words. Never give a shorthand token to type back. Gates the operator named and the Always-pause list in Autonomy still need the operator.
+- A **how** or **why** report is in hand, before any code on the approach the user stated. Run **principle-stop-on-broken-premise**. Stop and consult only when that report shows that the approach cannot work, or that it has a major design flaw, and the prompt and history show the user did not account for that.
 - Any code. Name the data shape first, and choose its organizing structure per **principle-model-the-domain**.
 - Code crossing a function boundary. Run the **architect** skill. One sketch, inline. A second sketch only when the first shape is genuinely contested.
 - Any prose surface, your reply to the user included. Run the **unslop** skill. Write the reply per **Writing the reply**.
@@ -44,19 +45,20 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 **Verification**
 
+- **Stop on a Broken Premise.** After **how** or **why** reports how the thing works, before any code. Stop and consult when that report shows that the user's stated approach cannot work, or that it has a major design flaw, and the prompt and history show the user did not account for that.
 - **Prove It Works.** After a task, before declaring done. Verify against the real artifact, not a proxy or "it compiles".
 - **Fix Root Causes.** Debugging. Trace each symptom back to the first place the system went wrong and fix it there. A guard is a fix only when the state it handles is legitimate.
 - **Test Behavior, Not Implementation.** Writing, changing, or keeping a test. Assert what the code's users can observe, so the test fails when that behavior breaks and keeps passing when only the internals change.
 
 ## Autonomy
 
-**Just do it.** Use any MCP tool. Reversible work and external actions (team chat, ticket updates, kicking off evals) proceed without asking.
+**Just do it.** Use any MCP tool. Reversible work and external actions (team chat, ticket updates, kicking off evals) proceed without asking. **Stop on a Broken Premise** is the one case where you stop mid-task without being asked.
 
 **Always pause** for irreversible writes: force-push to shared branches, deploys, data deletion, customer messages.
 
-**Session overrides.** "Don't stop", "going to bed", "run until done", or "be fully autonomous" means keep going.
+**Session overrides.** "Don't stop", "going to bed", "run until done", or "be fully autonomous" means keep going. **Stop on a Broken Premise** still applies, because those instructions assume the premise holds.
 
-**No is an acceptable answer.** Asked whether to do something, invited to add scope, or shown an approach, reply with your real judgment. Decline, push back, or say "this doesn't earn its place" when true. A recommendation is a judgment, not a validation. Agreement is not the default, candor over sycophancy.
+**No is an acceptable answer.** Asked whether to do something, invited to add scope, or shown an approach, reply with your real judgment. Decline, push back, or say "this doesn't earn its place" when true. A recommendation is a judgment, not a validation. Agreement is not the default, candor over sycophancy. That reply does not by itself stop the task.
 
 ## Subagents
 
@@ -70,7 +72,7 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 | Role | Spawned by | Default |
 |---|---|---|
-| `implementer` | Feature step 4, `bean-agent` | `grok-4.7-xhigh` |
+| `implementer` | Feature step 5, `bean-agent` | `grok-4.7-xhigh` |
 | `comment pass` | **no-comments**, `comment-sicko` | `composer-2.5` |
 | `how and why` | **how** helper, **why** investigators and synthesizer | `composer-2.5` |
 | `architect helper` | **architect** sketch helper | `grok-4.7-xhigh` |
