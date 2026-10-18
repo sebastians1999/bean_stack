@@ -1,6 +1,6 @@
 ---
 name: how
-description: "Use for \"how does X work\", code walkthroughs before changing something, and placement / ownership / layering questions (\"where should this live\", \"which package owns this\", \"is this the right layer\"). Explains subsystem architecture, runtime flow, onboarding mental models."
+description: "Use for \"how does X work\", code walkthroughs before changing something, and placement / ownership / layering questions (\"where should this live\", \"which package owns this\", \"is this the right layer\"). Explains subsystem architecture, runtime flow, onboarding mental models. Use why for motivation."
 disable-model-invocation: true
 ---
 
@@ -21,7 +21,7 @@ When in doubt, do it here.
 
 ## 2. One helper
 
-Spawn one Task subagent with `subagent_type: generalPurpose` and `readonly: true`. Leave `model` unset so it inherits the parent. If the user named a model for this run, use that. Build its prompt from `references/explorer-prompt.md` and have it return the sections in `references/explainer-prompt.md`.
+Spawn one Task subagent with `subagent_type: generalPurpose` and `readonly: true`. Set `model` from the `how and why` role, per the Models table in the **sebastian-mode** skill. Build its prompt from `references/explorer-prompt.md` and have it return the sections in `references/explainer-prompt.md`.
 
 That helper covers the question, or the slice you could not read. A second helper only when you can name the gap the first pass left.
 

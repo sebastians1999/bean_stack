@@ -20,13 +20,13 @@ Open a todolist with one entry per phase before starting.
 
 ## Phase A: Ground the problem
 
-Build a real mental model of every system the new code touches. Run the **how** skill over the relevant subsystems. Naming a file is not grounding. Produce the architectural explanation `how` prescribes.
+Build a real mental model of every system the new code touches. Run the **how** skill over the relevant subsystems. Naming a file is not grounding. Produce the architectural explanation `how` prescribes. If the design redefines ownership or layering, also run the **why** skill on the existing shape so the rationale becomes a constraint, not a guess.
 
 Skip Phase A only when the work is genuinely greenfield with no surrounding system to integrate.
 
 ## Phase B: Sketch
 
-Write one sketch in this agent. Use `references/runner-prompt.md` as the discipline for that sketch. Screen it against [`references/design-red-flags.md`](references/design-red-flags.md) before treating it as the design.
+Write one sketch in this agent. When the sketch does not fit here, spawn one helper with `subagent_type: generalPurpose` and set `model` from the `architect helper` role, per the Models table in the **sebastian-mode** skill. Use `references/runner-prompt.md` as the discipline for that sketch. Screen it against [`references/design-red-flags.md`](references/design-red-flags.md) before treating it as the design.
 
 Assume the next contributor is an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Prefer the design where a change that looks right from one file is right for the whole repo.
 

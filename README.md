@@ -12,7 +12,7 @@ Copy this repo to `~/.cursor/plugins/local/bean_stack`. Restart Cursor, or run D
 
 Start a task with `/sebastian-mode`.
 
-The implementer (`agents/sebastian-agent.md`) and the comment pass (`agents/comment-sicko.md`) run on `composer-2.5`, set in each file's `model` field. Edit that line to change the model. Cursor falls back to a compatible model when the plan or a team admin blocks it. Other harnesses ignore the field.
+Run `/setup-bean-stack` once to choose a model per subagent role. It writes `~/.cursor/rules/bean-stack-models.mdc`. Without that file, the defaults in the Models table of `skills/sebastian-mode/SKILL.md` apply. The implementer, the architect helper, and the automate-me miner run on `grok-4.7-xhigh`. The comment pass and the how and why subagents run on `composer-2.5`. The main chat model is whatever you pick in Cursor.
 
 ## Install for other agents
 
