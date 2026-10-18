@@ -2,7 +2,7 @@
 
 Bean Stack is Sebastian Schmülling's agent skill set, forked from [pstack](https://github.com/cursor/plugins/tree/main/pstack) 0.15.25 by Lauren Tan. pstack is MIT. This repo keeps that license and the copyright notice in `LICENSE`.
 
-`/sebastian-mode` is the entry point for implementation work. The agent understands the subsystem, names the data shape, sketches the design, hands the code to one implementer, and verifies on the real surface. `how` and `architect` run in the parent agent unless one helper is needed.
+`/sebastian-mode` is the entry point for implementation work. The agent understands the subsystem, names the data shape, sketches the design, hands the code to one implementer, and verifies on the real surface. `how` and `why` each start in one subagent and never use more than two. `architect` runs in the parent agent unless one helper is needed.
 
 ## Install in Cursor
 

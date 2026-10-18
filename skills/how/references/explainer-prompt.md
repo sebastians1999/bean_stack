@@ -10,7 +10,7 @@ Write an architectural explanation for a senior engineer. Use this structure. Dr
 
 {NOTES}
 
-Notes may be empty when you read the code yourself. When a helper passed findings, reconcile them with the code. Merge overlapping descriptions, resolve a contradiction by checking the code, and combine the slices into one picture.
+Notes are usually empty, and you read the code yourself. When notes are present, reconcile them with the code. Merge overlapping descriptions, resolve a contradiction by checking the code, and combine the slices into one picture. List what you could not trace under open questions, so the parent can name a gap.
 
 ## Instructions
 

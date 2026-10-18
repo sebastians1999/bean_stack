@@ -16,8 +16,8 @@ The Principles section below grounds every trigger. In your reply, name each pri
 
 Remaining triggers:
 
-- Nontrivial change, architecture decision, or "are we sure?" Run the **how** skill. Do that read inline. One helper only when the subsystem does not fit here.
-- "Why was X built this way", a design rationale, a regression, or a threshold you are about to change. Run the **why** skill.
+- Nontrivial change, architecture decision, or "are we sure?" Run the **how** skill. It reads in one subagent.
+- "Why was X built this way" from the user, or a gap in a `how` explanation: a design choice, a regression, or a threshold you are about to change and cannot justify from the code. Run the **why** skill on that choice. Without such a gap, skip it.
 - About to `AskQuestion` on a "which approach", "how should I", or "what should this do" fork. Classify it before you ask. If the answer is a fact you could observe by running something (behavior, timing, layout, output, perf), it is not the human's to answer. Run the cheapest check that would settle it. A read-only question stays on the **how** skill. Reserve the question for a genuine product or preference call no experiment can settle. Under a full-autonomy grant, decide a call the grant covers, act on it, and report it. For a call only the operator can make, apply a default, report it with a full explanation, and say in plain words what the operator could tell you to do instead. The operator answers in their own words. Never give a shorthand token to type back. Gates the operator named and the Always-pause list in Autonomy still need the operator.
 - Any code. Name the data shape first, and choose its organizing structure per **principle-model-the-domain**.
 - Code crossing a function boundary. Run the **architect** skill. One sketch, inline. A second sketch only when the first shape is genuinely contested.
@@ -64,7 +64,7 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 **One implementer.** Delegate code-writing to one `sebastian-agent` for the change. The parent keeps the plan, the review, and the verification. That split keeps the parent's context free. Do not spawn a second implementer for the same change. Do not run a bakeoff.
 
-**Helpers.** `how` and `architect` run inline. Spawn one helper when the read or the sketch does not fit in this agent. Spawn another only when you can name the gap the first helper left. A named gap is a file, a caller, or a decision you still cannot see. The **why** skill sets its own fan-out, one investigator per evidence source. Respect what it prescribes.
+**Helpers.** `how` and `why` each start in one subagent, so their reading stays out of this context. Each spawns a second only for a gap the first named, and never more than two. A named gap is a file, a caller, a source, or a decision you still cannot see. `architect` runs inline. It spawns one helper only when the sketch does not fit in this agent.
 
 **Models.** Every `Task` call sets `model` from its role. Read the role's line in the `bean-stack-models.mdc` rule, which `/setup-bean-stack` writes. With no rule or no line, use the default below. A value of `inherit-parent` means omit `model` so the subagent runs on the parent chat model. If the user named a model for this run, use that. If the Task tool rejects a slug, use the default and say so. Do not invent a slug.
 
@@ -72,11 +72,11 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 |---|---|---|
 | `implementer` | Feature step 4, `sebastian-agent` | `grok-4.7-xhigh` |
 | `comment pass` | **no-comments**, `comment-sicko` | `composer-2.5` |
-| `how and why` | **how** helper, **why** investigators and synthesizer | `composer-2.5` |
+| `how and why` | **how** explainer and gap explorer, **why** investigator and gap investigator | `composer-2.5` |
 | `architect helper` | **architect** sketch helper | `grok-4.7-xhigh` |
 | `automate-me mining` | **automate-me** mining subagent | `grok-4.7-xhigh` |
 
-**Defaults for every `Task` call.** `run_in_background: true` when the tool supports it. Agent mode for the implementer and the **why** spawns (readonly strips MCP and the tools the delegate needs). Readonly for a `how` helper. File pointers, not inlined context.
+**Defaults for every `Task` call.** `run_in_background: true` when the tool supports it. Agent mode for the implementer and the **why** spawns (readonly strips MCP and the tools the delegate needs). Readonly for `how` subagents. File pointers, not inlined context.
 
 You own the delegate's work. Review the diff and write your own summary. Do not pass through what it said.
 

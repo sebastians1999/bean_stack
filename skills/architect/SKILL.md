@@ -20,7 +20,7 @@ Open a todolist with one entry per phase before starting.
 
 ## Phase A: Ground the problem
 
-Build a real mental model of every system the new code touches. Run the **how** skill over the relevant subsystems. Naming a file is not grounding. Produce the architectural explanation `how` prescribes. If the design redefines ownership or layering, also run the **why** skill on the existing shape so the rationale becomes a constraint, not a guess.
+Build a real mental model of every system the new code touches. Run the **how** skill over the relevant subsystems. Naming a file is not grounding. Produce the architectural explanation `how` prescribes. If the design redefines ownership or layering and the explanation does not justify the existing shape, run the **why** skill on that shape so the rationale becomes a constraint, not a guess.
 
 Skip Phase A only when the work is genuinely greenfield with no surrounding system to integrate.
 
