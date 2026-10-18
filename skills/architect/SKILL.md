@@ -52,7 +52,7 @@ When a playbook owns implementation, stop this skill at the end of Phase B, or a
 
 Replace `not implemented` bodies with code, and pseudocode with logic. The sketch is the contract. Deviations from it are signal to surface. If a function needs a parameter the sketch did not anticipate, ask whether the sketch was wrong, the requirement was missed, or the implementation is overreaching.
 
-Under `/sebastian-mode`, the feature playbook delegates this phase to one `sebastian-agent`. A direct `/architect` invocation writes the code here.
+Under `/sebastian-mode`, the feature playbook delegates this phase to one `bean-agent`. A direct `/architect` invocation writes the code here.
 
 ## Phase E: Scrap when the architecture is wrong
 

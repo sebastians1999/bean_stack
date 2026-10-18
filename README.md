@@ -16,7 +16,7 @@ Run `/setup-bean-stack` once to choose a model per subagent role. It writes `~/.
 
 ## Install for other agents
 
-Other harnesses read the root `plugin.json` and the `skills/` tree. Point the agent at this checkout and have it read `skills/sebastian-mode/SKILL.md` before implementation work. When the harness can spawn subagents, the code-writing delegate is `sebastian-agent`. When it cannot, the parent agent writes the code and still follows the playbook.
+Other harnesses read the root `plugin.json` and the `skills/` tree. Point the agent at this checkout and have it read `skills/sebastian-mode/SKILL.md` before implementation work. When the harness can spawn subagents, the code-writing delegate is `bean-agent`. When it cannot, the parent agent writes the code and still follows the playbook.
 
 The root manifest name is `bean_stack`, the same as this repo. The Agent Plugins 1.0 name pattern allows lowercase letters, digits, dots, and hyphens. A strict validator will reject the underscore. The Cursor manifest is a separate file and carries the display name Bean Stack.
 

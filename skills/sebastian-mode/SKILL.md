@@ -8,7 +8,7 @@ color: yellow
 
 # Sebastian mode
 
-Bundled skills live at `../<name>/SKILL.md` from this file, so put this file's absolute path in every `sebastian-agent` prompt.
+Bundled skills live at `../<name>/SKILL.md` from this file, so put this file's absolute path in every `bean-agent` prompt.
 
 ## Non-negotiables
 
@@ -60,9 +60,9 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 ## Subagents
 
-**Use `subagent_type: "sebastian-agent"` for the code-writing delegate.** The chat that receives `/sebastian-mode` runs the playbook. Never spawn a `sebastian-agent` to run the playbook itself.
+**Use `subagent_type: "bean-agent"` for the code-writing delegate.** The chat that receives `/sebastian-mode` runs the playbook. Never spawn a `bean-agent` to run the playbook itself.
 
-**One implementer.** Delegate code-writing to one `sebastian-agent` for the change. The parent keeps the plan, the review, and the verification. That split keeps the parent's context free. Do not spawn a second implementer for the same change. Do not run a bakeoff.
+**One implementer.** Delegate code-writing to one `bean-agent` for the change. The parent keeps the plan, the review, and the verification. That split keeps the parent's context free. Do not spawn a second implementer for the same change. Do not run a bakeoff.
 
 **Helpers.** `how` and `architect` run inline. Spawn one helper when the read or the sketch does not fit in this agent. Spawn another only when you can name the gap the first helper left. A named gap is a file, a caller, or a decision you still cannot see. The **why** skill sets its own fan-out, one investigator per evidence source. Respect what it prescribes.
 
@@ -70,7 +70,7 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 | Role | Spawned by | Default |
 |---|---|---|
-| `implementer` | Feature step 4, `sebastian-agent` | `grok-4.7-xhigh` |
+| `implementer` | Feature step 4, `bean-agent` | `grok-4.7-xhigh` |
 | `comment pass` | **no-comments**, `comment-sicko` | `composer-2.5` |
 | `how and why` | **how** helper, **why** investigators and synthesizer | `composer-2.5` |
 | `architect helper` | **architect** sketch helper | `grok-4.7-xhigh` |
