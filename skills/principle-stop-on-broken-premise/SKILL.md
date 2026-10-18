@@ -1,6 +1,6 @@
 ---
 name: principle-stop-on-broken-premise
-description: "Apply after how or why reports how the thing works, and before any code. Stop before any code only when the prompt and the conversation history show the user did not account for what the report found. The report must show that the stated approach cannot work, or that it has a major design flaw."
+description: "Apply after how or why reports how the thing works, and before any code. Stop before any code only when the prompt and the conversation history show the user did not account for what the report found, or that the user has a knowledge gap about it. The report must show that the stated approach cannot work, or that it has a major design flaw."
 disable-model-invocation: true
 ---
 
@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Compare the how or why report to the approach the user stated. Run this check after that report is done. Leave the how skill and the why skill unchanged.
 
-**When to stop.** Stop before any code only when the prompt and the conversation history show the user did not account for what the report found. The report must show that the stated approach cannot work, or that it has a major design flaw.
+**When to stop.** Stop before any code only when the prompt and the conversation history show the user did not account for what the report found, or that the user has a knowledge gap about it. The report must show that the stated approach cannot work, or that it has a major design flaw.
 
 **When to continue.** Keep going.
 
