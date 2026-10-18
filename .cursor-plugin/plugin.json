@@ -1,0 +1,29 @@
+{
+	"name": "bean_stack",
+	"displayName": "Bean Stack",
+	"version": "0.1.0",
+	"description": "Bean Stack is Sebastian Schmülling's lean fork of pstack (MIT, Lauren Tan). Concise, verified implementation work, with one code-writing subagent.",
+	"author": {
+		"name": "Sebastian Schmülling"
+	},
+	"homepage": "https://github.com/sebastians1999/bean_stack",
+	"repository": "https://github.com/sebastians1999/bean_stack",
+	"license": "MIT",
+	"keywords": [
+		"bean_stack",
+		"sebastian-mode",
+		"pstack",
+		"workflow",
+		"principles",
+		"unslop"
+	],
+	"category": "developer-tools",
+	"tags": [
+		"workflow",
+		"principles",
+		"review",
+		"planning"
+	],
+	"skills": "./skills/",
+	"agents": "./agents/"
+}
