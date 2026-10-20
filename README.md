@@ -6,19 +6,30 @@ Bean Stack is Sebastian Schmülling's agent skill set, forked from [pstack](http
 
 ## Install in Cursor
 
-Cursor loads `.cursor-plugin/plugin.json`. That manifest points at `skills/` and `agents/`.
+This checkout is the only copy. Cursor reads skills from `~/.cursor/skills` and subagents from `~/.cursor/agents`. Point those at this repo, using its absolute path:
 
-Copy this repo to `~/.cursor/plugins/local/bean_stack`. Restart Cursor, or run Developer: Reload Window. Open Customize and confirm Bean Stack is listed. Copy the directory into that folder. A symlink whose target sits outside `~/.cursor/plugins/local` is skipped. On an Enterprise team, an admin turns on Allow Local Plugin Imports before that folder loads. A marketplace plugin with the same name takes precedence over the local copy.
+```
+ln -sfn /absolute/path/to/bean_stack/bean-stack/skills ~/.cursor/skills
+mkdir -p ~/.cursor/agents
+ln -sfn /absolute/path/to/bean_stack/bean-stack/agents/bean-agent.md ~/.cursor/agents/bean-agent.md
+ln -sfn /absolute/path/to/bean_stack/bean-stack/agents/comment-sicko.md ~/.cursor/agents/comment-sicko.md
+```
+
+Restart Cursor, or run Developer: Reload Window. Turn on Settings → Agents → Sync Skills for Cloud Agents so cloud agents receive the skills.
+
+Do not also keep `~/.cursor/plugins/local/bean_stack`. Cursor skips a plugin symlink whose target sits outside that folder, so the plugin cannot be this repo. A copied plugin would load the same skills a second time.
 
 Start a task with `/sebastian-mode`.
 
-Run `/setup-bean-stack` once to choose a model per subagent role. It writes `~/.cursor/rules/bean-stack-models.mdc`. Without that file, the defaults in the Models table of `skills/sebastian-mode/SKILL.md` apply. The implementer, the architect helper, and the automate-me miner run on `grok-4.7-xhigh`. The comment pass, the how and why subagents, and the trail reviewer run on `composer-2.5`. The main chat model is whatever you pick in Cursor.
+Run `/setup-bean-stack` once to choose a model per subagent role. It writes `~/.cursor/rules/bean-stack-models.mdc`. Without that file, the defaults in the Models table of `bean-stack/skills/sebastian-mode/SKILL.md` apply. The implementer, the architect helper, and the automate-me miner run on `grok-4.7-xhigh`. The comment pass, the how and why subagents, and the trail reviewer run on `composer-2.5`. The main chat model is whatever you pick in Cursor.
+
+## Install from the marketplace
+
+Import this repository in Dashboard → Plugins & MCPs → Add Marketplace → Import from Repo. Cursor reads `.cursor-plugin/marketplace.json` and loads the plugin in `bean-stack/`. The plugin name is `bean-stack`. Turn on Enable Auto Refresh, with the Cursor GitHub App installed on this repo, so a push updates the marketplace.
 
 ## Install for other agents
 
-Other harnesses read the root `plugin.json` and the `skills/` tree. Point the agent at this checkout and have it read `skills/sebastian-mode/SKILL.md` before implementation work. When the harness can spawn subagents, the code-writing delegate is `bean-agent`. When it cannot, the parent agent writes the code and still follows the playbook.
-
-The root manifest name is `bean_stack`, the same as this repo. The Agent Plugins 1.0 name pattern allows lowercase letters, digits, dots, and hyphens. A strict validator will reject the underscore. The Cursor manifest is a separate file and carries the display name Bean Stack.
+Other harnesses read `bean-stack/plugin.json` and the `bean-stack/skills/` tree. Point the agent at this checkout and have it read `bean-stack/skills/sebastian-mode/SKILL.md` before implementation work. When the harness can spawn subagents, the code-writing delegate is `bean-agent`. When it cannot, the parent agent writes the code and still follows the playbook.
 
 ## License
 

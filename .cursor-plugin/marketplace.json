@@ -1,0 +1,16 @@
+{
+  "name": "bean-stack",
+  "owner": {
+    "name": "Sebastian Schmülling"
+  },
+  "metadata": {
+    "description": "Bean Stack, Sebastian Schmülling's lean fork of pstack."
+  },
+  "plugins": [
+    {
+      "name": "bean-stack",
+      "source": "bean-stack",
+      "description": "Bean Stack is Sebastian Schmülling's lean fork of pstack. Concise, verified implementation work, with one code-writing subagent."
+    }
+  ]
+}

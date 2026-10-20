@@ -1,5 +1,5 @@
 ---
-name: Sebastian Mode
+name: sebastian-mode
 description: Sebastian's agent style for concise, detailed responses, deliberate subagents, unslopped prose, simple code, and verified work. Use for Sebastian, /sebastian-mode, or requests to work in this style.
 disable-model-invocation: true
 icon: crown

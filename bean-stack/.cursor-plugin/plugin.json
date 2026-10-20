@@ -1,5 +1,5 @@
 {
-	"name": "bean_stack",
+	"name": "bean-stack",
 	"displayName": "Bean Stack",
 	"version": "0.1.0",
 	"description": "Bean Stack is Sebastian Schmülling's lean fork of pstack (MIT, Lauren Tan). Concise, verified implementation work, with one code-writing subagent.",
