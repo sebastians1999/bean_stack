@@ -26,6 +26,7 @@ Remaining triggers:
 - Before review. Run the **no-comments** skill (`/no-comments`).
 - UI, IDE, or CLI behavior. Verify it on that surface yourself. Reproduce a bug on the same surface first.
 - Broken skill mid-task. Fix it in its own change. Do not block the task. Do not silently work around the break.
+- Long, autonomous, or multi-phase work, or any task the user steps away from to review later. These phrases count: "going to bed", "trust it when i'm back", "/loop until X". Open a decision trail with the **show-me-your-work** skill. Commit it when a reviewer needs the trail to trust the result. Keep it local otherwise.
 
 ## Principles
 
